@@ -1,20 +1,20 @@
-class Vehicle {
+class _Vehicle {
     constructor(
         protected readonly way: string){       
     }
 }
-class Car extends Vehicle{
+class _Car extends _Vehicle{
     constructor(way: string){
         super(way)
     }
 }
-const car = new Car("air")
-console.log(car)
+const _car = new _Car("air")
+console.log(_car)
 
-type Person = {
+type _Person = {
     (name: string): string
 }
-let dataFunction: Person = (name: string) => {
+let dataFunction: _Person = (name: string) => {
     return `Hello ${name}`
 }
 console.log(dataFunction("Utif Milkedori"))
@@ -26,7 +26,7 @@ interface IPerson {
 
     getName(name: string): string
 }
-class Author implements IPerson {
+class _Author implements IPerson {
     address?: string
     name?: string
     
@@ -38,10 +38,10 @@ class Author implements IPerson {
         return `Hello, ${name || this.name || 'World!'} ${this.address ? 'from ' + this.address : ''}`
     }
 }
-const author = new Author("UTIF", "Indonesia")
+const author = new _Author("UTIF", "Indonesia")
 console.log("author", author.getName());
 
-class Member {
+class _Member {
     constructor(
         private _name: string, 
         private _school?: string){
@@ -54,11 +54,11 @@ class Member {
     }
 }
 
-let dataClass = new Member("Utif milkedori")
+let dataClass = new _Member("Utif milkedori")
 console.log(dataClass.getName())
 console.log('type of dataClass:', typeof dataClass)
 
-let dataClass2 = new Member("Utif milkedori", "STMIK INDONESIA PADANG")
+let dataClass2 = new _Member("Utif milkedori", "STMIK INDONESIA PADANG")
 console.log(dataClass2.getName())
 
 let dataMap = new Map<String, any>()
